@@ -1,5 +1,7 @@
 'use client';
+import Image from 'next/image';
 import Reveal from '@/components/motion/Reveal';
+import TiltImage from '@/components/motion/TiltImage';
 
 export default function HomeIntro() {
   return (
@@ -41,6 +43,23 @@ export default function HomeIntro() {
             </p>
           </Reveal>
         </div>
+      </div>
+
+      <div className="mx-auto mt-24 grid max-w-[1280px] grid-cols-1 gap-6 px-6 md:mt-32 md:grid-cols-3 md:gap-10 md:px-12">
+        <Reveal delay={0.05}>
+          <TiltImage src="/images/hero-ring.jpg" alt="Mayavé signature ring detail" containerClassName="aspect-[4/5] w-full" />
+          <div className="mt-4 text-[11px] uppercase tracking-[0.22em] text-muted">No.01 · Atelier</div>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <Image src="/images/gem-rough.jpg" alt="Rough diamond, pre-cut" fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+          </div>
+          <div className="mt-4 text-[11px] uppercase tracking-[0.22em] text-muted">No.02 · Provenance</div>
+        </Reveal>
+        <Reveal delay={0.25}>
+          <TiltImage src="/images/hero-necklace.jpg" alt="Editorial necklace study" containerClassName="aspect-[4/5] w-full" />
+          <div className="mt-4 text-[11px] uppercase tracking-[0.22em] text-muted">No.03 · Archive</div>
+        </Reveal>
       </div>
     </section>
   );

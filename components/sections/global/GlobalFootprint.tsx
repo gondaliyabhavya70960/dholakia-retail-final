@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Reveal from '@/components/motion/Reveal';
 
@@ -31,8 +32,18 @@ export default function GlobalFootprint() {
   const [active, setActive] = useState(0);
   const a = LOCATIONS[active];
   return (
-    <section className="bg-ivory">
-      <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-12 md:py-36">
+    <section className="relative bg-ivory">
+      <div className="pointer-events-none absolute inset-x-0 top-20 z-0 mx-auto h-[60%] max-w-[1480px] opacity-[0.06]">
+        <Image
+          src="/images/global-map.jpg"
+          alt=""
+          fill
+          aria-hidden
+          sizes="100vw"
+          className="object-contain"
+        />
+      </div>
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-28 md:px-12 md:py-36">
         <Reveal>
           <div className="text-[11px] uppercase tracking-[0.22em] text-electric">
             Ecosystem footprint

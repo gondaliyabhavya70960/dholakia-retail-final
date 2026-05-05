@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Reveal from '@/components/motion/Reveal';
 
 export default function MayaveEssence() {
@@ -17,14 +18,34 @@ export default function MayaveEssence() {
           </p>
         </Reveal>
 
-        {[
-          'The atelier sits inside the Surat Diamond Bourse, three floors above the rough-stone trading hall where the Dholakia family has worked for forty years. Every Mayavé piece begins here — with a stone we have lived with since it was rough. By the time it reaches the bench, we have certified it three times: once at extraction, once at cutting, once at setting.',
-          'Our pieces are not seasonal. We do not chase a collection cadence. A Mayavé piece is conceived when we believe we have something to say. It is photographed for the archive, fitted to a single client, and sent with a hand-written certificate that names every stone, every weight, every signature.'
-        ].map((p, i) => (
-          <Reveal key={i} delay={i * 0.1}>
-            <p className="mt-7 text-[16.5px] leading-[1.9] text-ink/85">{p}</p>
-          </Reveal>
-        ))}
+        <Reveal delay={0.05}>
+          <p className="mt-7 text-[16.5px] leading-[1.9] text-ink/85">
+            The atelier sits inside the Surat Diamond Bourse, three floors above the rough-stone trading hall where the Dholakia family has worked for forty years. Every Mayavé piece begins here — with a stone we have lived with since it was rough. By the time it reaches the bench, we have certified it three times: once at extraction, once at cutting, once at setting.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <figure className="my-14 -mx-6 md:-mx-32">
+            <div className="relative aspect-[16/10] w-full overflow-hidden">
+              <Image
+                src="/images/mayave-hero.jpg"
+                alt="Mayavé atelier — stone study under loupe"
+                fill
+                sizes="(min-width:1024px) 1080px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 px-6 text-[11px] uppercase tracking-[0.22em] text-muted md:px-32">
+              Inside the Mayavé atelier · stone study, 2025
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <p className="text-[16.5px] leading-[1.9] text-ink/85">
+            Our pieces are not seasonal. We do not chase a collection cadence. A Mayavé piece is conceived when we believe we have something to say. It is photographed for the archive, fitted to a single client, and sent with a hand-written certificate that names every stone, every weight, every signature.
+          </p>
+        </Reveal>
 
         <Reveal delay={0.3}>
           <blockquote className="my-14 border-l-2 border-electric pl-7">

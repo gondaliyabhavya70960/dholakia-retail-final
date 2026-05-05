@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Reveal from '@/components/motion/Reveal';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -10,35 +11,40 @@ const STEPS = [
     Icon: Compass,
     title: 'Conception',
     body:
-      'A piece begins with a conversation — with the client, the stone, the occasion. We sketch by hand and present the brief on paper before a single CAD line is drawn.'
+      'A piece begins with a conversation — with the client, the stone, the occasion. We sketch by hand and present the brief on paper before a single CAD line is drawn.',
+    image: '/images/process-1.jpg'
   },
   {
     n: '02',
     Icon: Pencil,
     title: 'Drawing & wax',
     body:
-      'Every Mayavé piece is rendered in CAD, printed in wax, fitted to the client, and revised at least three times before metal is committed.'
+      'Every Mayavé piece is rendered in CAD, printed in wax, fitted to the client, and revised at least three times before metal is committed.',
+    image: '/images/process-2.jpg'
   },
   {
     n: '03',
     Icon: Hammer,
     title: 'Bench',
     body:
-      'A single master jeweller carries the piece from cast to polish. No subdivision, no assembly-line — the maker’s rhythm becomes part of the object.'
+      'A single master jeweller carries the piece from cast to polish. No subdivision, no assembly-line — the maker’s rhythm becomes part of the object.',
+    image: '/images/process-3.jpg'
   },
   {
     n: '04',
     Icon: Diamond,
     title: 'Setting & stones',
     body:
-      'Setters work under loupe and microscope. Each stone is laid by hand, each prong measured to the tenth of a millimetre, each facet aligned to the architectural intent.'
+      'Setters work under loupe and microscope. Each stone is laid by hand, each prong measured to the tenth of a millimetre, each facet aligned to the architectural intent.',
+    image: '/images/process-4.jpg'
   },
   {
     n: '05',
     Icon: ShieldCheck,
     title: 'Certification & archive',
     body:
-      'A hand-written certificate names every stone, every weight, every signature. The piece is photographed for the Mayavé archive before it leaves the atelier.'
+      'A hand-written certificate names every stone, every weight, every signature. The piece is photographed for the Mayavé archive before it leaves the atelier.',
+    image: '/images/atelier-tools.jpg'
   }
 ];
 
@@ -71,15 +77,28 @@ export default function CraftProcess() {
                   <div className="absolute -left-[44px] top-2 grid h-7 w-7 place-items-center rounded-full border border-electric bg-ivory md:-left-[58px]">
                     <s.Icon size={14} className="text-electric" />
                   </div>
-                  <div className="font-display text-[2rem] font-light italic leading-none text-electric/80">
-                    {s.n}
+                  <div className="grid gap-8 md:grid-cols-[1fr_220px] md:items-center md:gap-12">
+                    <div>
+                      <div className="font-display text-[2rem] font-light italic leading-none text-electric/80">
+                        {s.n}
+                      </div>
+                      <h3 className="font-display mt-4 text-[clamp(1.5rem,2vw,2rem)] font-light leading-tight text-ink">
+                        {s.title}
+                      </h3>
+                      <p className="mt-4 max-w-[540px] text-[15.5px] leading-[1.85] text-muted">
+                        {s.body}
+                      </p>
+                    </div>
+                    <div className="relative aspect-square w-full overflow-hidden border border-ink/10 bg-white md:max-w-[220px]">
+                      <Image
+                        src={s.image}
+                        alt={`${s.title} — atelier process`}
+                        fill
+                        sizes="220px"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                  <h3 className="font-display mt-4 text-[clamp(1.5rem,2vw,2rem)] font-light leading-tight text-ink">
-                    {s.title}
-                  </h3>
-                  <p className="mt-4 max-w-[540px] text-[15.5px] leading-[1.85] text-muted">
-                    {s.body}
-                  </p>
                 </div>
               </Reveal>
             ))}

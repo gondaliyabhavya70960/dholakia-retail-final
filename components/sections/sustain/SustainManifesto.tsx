@@ -1,10 +1,23 @@
 'use client';
+import Image from 'next/image';
 import Reveal from '@/components/motion/Reveal';
 
 export default function SustainManifesto() {
   return (
-    <section className="bg-ink py-32 md:py-40">
-      <div className="mx-auto max-w-[820px] px-6">
+    <section className="relative overflow-hidden bg-ink py-32 md:py-40">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.18]">
+        <Image
+          src="/images/editorial-2.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="object-cover"
+          style={{ transform: 'scale(1.08)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/30 to-ink/80" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-[820px] px-6">
         <Reveal>
           <div className="border border-electric bg-ivory p-10 md:p-16">
             <div className="text-[11px] uppercase tracking-[0.22em] text-electric">

@@ -1,8 +1,9 @@
 'use client';
+import Image from 'next/image';
 import Reveal from '@/components/motion/Reveal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const TERRITORIES = [
   {
@@ -10,28 +11,32 @@ const TERRITORIES = [
     name: 'Sūtra',
     window: '2027 · in development',
     body:
-      'A men’s collection — patrician, austere, conceived for the modern gentleman who measures sophistication in stones, not logos. Currently in design with the Mayavé atelier.'
+      'A men’s collection — patrician, austere, conceived for the modern gentleman who measures sophistication in stones, not logos. Currently in design with the Mayavé atelier.',
+    image: '/images/territory-1.jpg'
   },
   {
     n: '03',
     name: 'Anaita',
     window: '2027 · in development',
     body:
-      'A bridal house, traditional in form and contemporary in conscience — every set traceable, every diamond ethically grown or sourced. Culturally Indian, globally engineered.'
+      'A bridal house, traditional in form and contemporary in conscience — every set traceable, every diamond ethically grown or sourced. Culturally Indian, globally engineered.',
+    image: '/images/territory-2.jpg'
   },
   {
     n: '04',
     name: 'Atlas',
     window: '2028 · concept',
     body:
-      'A travel-and-trophy house — single statement objects for collectors, executives and museums. Lab-grown stones, recycled gold, archival cases.'
+      'A travel-and-trophy house — single statement objects for collectors, executives and museums. Lab-grown stones, recycled gold, archival cases.',
+    image: '/images/territory-3.jpg'
   },
   {
     n: '05',
     name: 'Untitled',
     window: '2029 · concept',
     body:
-      'An open chapter. The next house has not been named. We do not write the brief until we are ready to ship the brief.'
+      'An open chapter. The next house has not been named. We do not write the brief until we are ready to ship the brief.',
+    image: '/images/lookbook-5.jpg'
   }
 ];
 
@@ -85,9 +90,23 @@ export default function PortfolioFuture() {
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="grid grid-cols-[60px_1fr] gap-6 pb-10 md:pb-12">
+                      <div className="grid grid-cols-[60px_1fr] gap-6 pb-10 md:gap-10 md:pb-12">
                         <span />
-                        <p className="max-w-[640px] text-[15px] leading-[1.85] text-muted">{t.body}</p>
+                        <div className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_280px]">
+                          <p className="max-w-[640px] text-[15px] leading-[1.85] text-muted">{t.body}</p>
+                          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink/10 bg-white">
+                            <Image
+                              src={t.image}
+                              alt={`${t.name} — reference imagery`}
+                              fill
+                              sizes="(min-width:768px) 280px, 100vw"
+                              className="object-cover"
+                            />
+                            <div className="absolute left-3 top-3 bg-ivory/90 px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-electric">
+                              Coming soon
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   )}

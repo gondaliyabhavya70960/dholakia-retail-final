@@ -1,11 +1,32 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from '@/components/motion/Reveal';
+import MouseParallax from '@/components/motion/MouseParallax';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function HomeSustain() {
   return (
     <section className="bg-ivory">
+      <div className="mx-auto max-w-[1480px] px-6 pt-32 md:px-12 md:pt-44">
+        <Reveal>
+          <MouseParallax strength={18} className="relative aspect-[16/7] w-full overflow-hidden">
+            <Image
+              src="/images/sustainability-2.jpg"
+              alt="River and earth — the source of every stone"
+              fill
+              priority={false}
+              sizes="100vw"
+              className="object-cover"
+              style={{ transform: 'scale(1.08)' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 text-[11px] uppercase tracking-[0.22em] text-white/85 md:bottom-10 md:left-12">
+              Mission river · The water we owe back
+            </div>
+          </MouseParallax>
+        </Reveal>
+      </div>
       <div className="mx-auto max-w-[1280px] px-6 py-32 md:px-12 md:py-44">
         <Reveal>
           <p className="font-display mx-auto max-w-[920px] text-center text-[clamp(2rem,4vw,3.6rem)] font-light italic leading-[1.18] tracking-[-0.01em] text-ink">

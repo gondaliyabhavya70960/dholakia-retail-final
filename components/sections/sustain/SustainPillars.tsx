@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Reveal from '@/components/motion/Reveal';
 import { Telescope, HandCoins, FileSearch, Hourglass, ArrowRight } from 'lucide-react';
@@ -11,28 +12,32 @@ const PILLARS = [
     label: 'Traceability',
     title: 'Every stone, on the record.',
     body:
-      'We work only with stones we can trace from extraction (or growth) to setting. Our lab-grown intake is SCS-007 certified; mined stones carry Kimberley Process certification and RJC supplier audits.'
+      'We work only with stones we can trace from extraction (or growth) to setting. Our lab-grown intake is SCS-007 certified; mined stones carry Kimberley Process certification and RJC supplier audits.',
+    image: '/images/pillar-1.jpg'
   },
   {
     Icon: HandCoins,
     label: 'Responsible creation',
     title: 'Bench, atelier, supplier — all audited.',
     body:
-      'Wages, hours, conditions, and safety are audited annually across our supplier base. Our Surat atelier is RJC-aligned with quarterly internal review and bi-annual external audit.'
+      'Wages, hours, conditions, and safety are audited annually across our supplier base. Our Surat atelier is RJC-aligned with quarterly internal review and bi-annual external audit.',
+    image: '/images/pillar-2.jpg'
   },
   {
     Icon: FileSearch,
     label: 'Transparency',
     title: 'Publish what we measure.',
     body:
-      'Our annual ESG report covers Scope 1, 2, and 3 emissions, water and energy intensity, supplier audits, traceability metrics, and the percentage of intake from lab-grown channels.'
+      'Our annual ESG report covers Scope 1, 2, and 3 emissions, water and energy intensity, supplier audits, traceability metrics, and the percentage of intake from lab-grown channels.',
+    image: '/images/pillar-3.jpg'
   },
   {
     Icon: Hourglass,
     label: 'Long-term value',
     title: 'A piece that lasts a century.',
     body:
-      'A Mayavé piece is conceived for permanence — repaired, reset, restored across generations. Built-to-last is the cheapest, slowest, and most defensible form of sustainability.'
+      'A Mayavé piece is conceived for permanence — repaired, reset, restored across generations. Built-to-last is the cheapest, slowest, and most defensible form of sustainability.',
+    image: '/images/sustainability-1.jpg'
   }
 ];
 
@@ -83,9 +88,18 @@ export default function SustainPillars() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="grid h-32 w-32 place-items-center rounded-full border border-electric/30 bg-electric/5"
+              className="relative aspect-[4/5] w-full overflow-hidden border border-ink/10 bg-white"
             >
-              <a.Icon size={42} className="text-electric" />
+              <Image
+                src={a.image}
+                alt={`${a.label} — ${a.title}`}
+                fill
+                sizes="(min-width:768px) 33vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-ivory/90">
+                <a.Icon size={20} className="text-electric" />
+              </div>
             </motion.div>
           </AnimatePresence>
           <AnimatePresence mode="wait">
