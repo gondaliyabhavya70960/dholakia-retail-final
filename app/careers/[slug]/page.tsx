@@ -1,5 +1,5 @@
 'use client';
-import { use, useState } from 'react';
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -31,9 +31,8 @@ const BENEFITS = [
   'Atelier discount on Mayavé pieces'
 ];
 
-export default function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
-  const role = careerRoles.find((r) => r.slug === slug);
+export default function Page({ params }: { params: { slug: string } }) {
+  const role = careerRoles.find((r) => r.slug === params.slug);
   if (!role) return notFound();
   const related = careerRoles.filter((r) => r.slug !== role.slug);
   const [open, setOpen] = useState<string>('about');
