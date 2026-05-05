@@ -77,7 +77,7 @@ export default function SiteFooter() {
         {/* Block 4 — Copyright */}
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-[13px] text-[#B4BCC9] md:flex-row md:items-center md:justify-between">
           <div>© 2026 Dholakia Retail Private Limited. All rights reserved.</div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <Link href="/legal/privacy" className="hover:text-white">
               Privacy
             </Link>
@@ -86,6 +86,9 @@ export default function SiteFooter() {
             </Link>
             <Link href="/legal/cookies" className="hover:text-white">
               Cookies
+            </Link>
+            <Link href="/legal/disclaimer" className="hover:text-white">
+              Disclaimer
             </Link>
           </div>
         </div>

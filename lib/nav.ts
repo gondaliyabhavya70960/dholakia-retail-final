@@ -5,6 +5,7 @@ export const primaryNav = [
   { label: 'Sustainability', href: '/sustainability' },
   { label: 'Innovation', href: '/innovation' },
   { label: 'Global', href: '/global' },
+  { label: 'Journal', href: '/journal' },
   { label: 'News', href: '/news' },
   { label: 'Careers', href: '/careers' }
 ];
@@ -31,6 +32,8 @@ export const footerLinks = {
   contact: [
     { label: 'Contact', href: '/contact' },
     { label: 'Newsroom', href: '/news' },
+    { label: 'Press Kit', href: '/news#press-kit' },
+    { label: 'Journal', href: '/journal' },
     { label: 'Careers', href: '/careers' }
   ]
 };

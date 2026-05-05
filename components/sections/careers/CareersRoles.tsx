@@ -1,8 +1,10 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
 import Reveal from '@/components/motion/Reveal';
+import { careerRoles } from '@/lib/content';
 
 const FUNCTIONS = [
   {
@@ -87,14 +89,31 @@ export default function CareersRoles() {
                         <p className="max-w-[600px] text-[15px] leading-[1.85] text-muted">
                           {f.body}
                         </p>
-                        <a
-                          href="#"
-                          data-cursor="hover"
-                          className="mt-5 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.18em] text-electric"
-                        >
-                          See open roles
-                          <ArrowUpRight size={13} />
-                        </a>
+                        <div className="mt-7 space-y-2">
+                          {careerRoles
+                            .filter((r) => r.fn === f.name)
+                            .map((r) => (
+                              <Link
+                                key={r.slug}
+                                href={`/careers/${r.slug}`}
+                                data-cursor="hover"
+                                className="group/role flex items-center justify-between gap-4 border-t border-ink/10 py-3 text-left transition-colors hover:border-electric"
+                              >
+                                <span className="font-display text-[1.05rem] font-light text-ink transition-colors group-hover/role:text-electric">
+                                  {r.title}
+                                </span>
+                                <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-electric">
+                                  {r.location}
+                                  <ArrowUpRight size={12} />
+                                </span>
+                              </Link>
+                            ))}
+                          {careerRoles.filter((r) => r.fn === f.name).length === 0 && (
+                            <div className="text-[12px] uppercase tracking-[0.18em] text-muted">
+                              Roles open to expressions of interest — write to careers@dholakiaretail.com.
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   )}
