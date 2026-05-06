@@ -35,23 +35,19 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
-        <Reveal delay={0.12}>
-          <div className="mx-auto max-w-[1480px] px-6 md:px-12">
-            <div className="relative h-[44vh] min-h-[320px] w-full overflow-hidden">
-              <MouseParallax strength={18} className="h-full w-full">
-                <Image
-                  src="/images/journal-banner.jpg"
-                  alt=""
-                  fill
-                  priority
-                  sizes="100vw"
-                  className="object-cover"
-                />
-              </MouseParallax>
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/15 to-transparent" />
-            </div>
+        <div className="mx-auto max-w-[1480px] px-6 md:px-12">
+          <div className="relative h-[44vh] min-h-[320px] w-full overflow-hidden">
+            <Image
+              src="/images/journal-banner.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/15 to-transparent" />
           </div>
-        </Reveal>
+        </div>
         <div className="h-16 md:h-24" />
       </section>
 
