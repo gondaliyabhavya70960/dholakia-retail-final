@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import MouseParallax from '@/components/motion/MouseParallax';
 
 export default function ContactHero() {
   return (
@@ -23,20 +22,16 @@ export default function ContactHero() {
           </p>
         </motion.div>
       </div>
-      <div className="relative hidden min-h-[520px] overflow-hidden bg-ink lg:block">
-        <MouseParallax strength={24} className="absolute inset-0">
-          <div className="absolute -inset-[6%]">
-            <Image
-              src="/images/contact-banner.jpg"
-              alt=""
-              fill
-              priority
-              sizes="40vw"
-              className="object-cover scale-105"
-            />
-          </div>
-        </MouseParallax>
-        <div className="absolute inset-0 bg-gradient-to-l from-ink/0 via-ink/10 to-ink/30" />
+      <div className="relative hidden min-h-[560px] overflow-hidden bg-ink lg:block">
+        <Image
+          src="/images/contact-banner.jpg"
+          alt=""
+          fill
+          priority
+          sizes="40vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-ink/5 to-ink/25" />
       </div>
     </section>
   );
