@@ -51,6 +51,7 @@ export default function Page() {
         lastUpdated="01 Apr 2026"
         effective="15 Apr 2026"
         version="2.0"
+        imageSrc="/images/legal-banner-2.jpg"
       />
       <LegalBody sections={sectionsTop} />
       <CookiePreferenceCard />

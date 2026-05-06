@@ -98,6 +98,23 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Cinematic banner strip */}
+      <section className="bg-ivory">
+        <div className="mx-auto max-w-[1480px] px-6 md:px-12">
+          <div className="relative h-[48vh] min-h-[340px] w-full overflow-hidden">
+            <Image
+              src="/images/careers-role-banner.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent" />
+          </div>
+        </div>
+      </section>
+
       {/* Accordion body */}
       <section className="bg-ivory">
         <div className="mx-auto max-w-[820px] px-6 pb-24 md:py-12">

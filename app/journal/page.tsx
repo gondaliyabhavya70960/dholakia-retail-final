@@ -17,9 +17,9 @@ export default function Page() {
 
   return (
     <>
-      {/* Typographic-first hero */}
+      {/* Typographic-first hero with banner image */}
       <section className="bg-ivory">
-        <div className="mx-auto max-w-[1280px] px-6 pb-16 pt-32 md:px-12 md:pb-24 md:pt-44">
+        <div className="mx-auto max-w-[1280px] px-6 pb-12 pt-32 md:px-12 md:pb-16 md:pt-44">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.22em] text-electric">The Journal</div>
             <h1 className="font-display mt-7 max-w-[1080px] text-[clamp(3rem,7vw,8rem)] font-light leading-[0.98] tracking-[-0.018em] text-ink">
@@ -35,6 +35,24 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+        <Reveal delay={0.12}>
+          <div className="mx-auto max-w-[1480px] px-6 md:px-12">
+            <div className="relative h-[44vh] min-h-[320px] w-full overflow-hidden">
+              <MouseParallax strength={18} className="h-full w-full">
+                <Image
+                  src="/images/journal-banner.jpg"
+                  alt=""
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </MouseParallax>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/15 to-transparent" />
+            </div>
+          </div>
+        </Reveal>
+        <div className="h-16 md:h-24" />
       </section>
 
       {/* Full-bleed featured post */}

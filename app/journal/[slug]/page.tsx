@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, Linkedin, Twitter, Link2 } from 'lucide-react';
 import { journalPosts } from '@/lib/content';
 import Reveal from '@/components/motion/Reveal';
+import MouseParallax from '@/components/motion/MouseParallax';
 
 export function generateStaticParams() {
   return journalPosts.map((p) => ({ slug: p.slug }));
@@ -65,6 +66,25 @@ export default function Page({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Cinematic banner strip */}
+      <section className="bg-ivory">
+        <div className="mx-auto max-w-[1480px] px-6 md:px-12">
+          <div className="relative h-[52vh] min-h-[360px] w-full overflow-hidden">
+            <MouseParallax strength={20} className="h-full w-full">
+              <Image
+                src="/images/journal-article-banner.jpg"
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            </MouseParallax>
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/20 to-transparent" />
+          </div>
         </div>
       </section>
 
