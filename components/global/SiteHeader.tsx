@@ -66,8 +66,8 @@ export default function SiteHeader() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
+        {/* Desktop nav — only at xl+ since we have 9 nav items */}
+        <nav className="hidden items-center gap-4 xl:flex 2xl:gap-7">
           {primaryNav.map((item) => {
             const active = path === item.href || (item.href !== '/' && path?.startsWith(item.href));
             return (
@@ -76,7 +76,7 @@ export default function SiteHeader() {
                 href={item.href}
                 data-cursor="hover"
                 className={clsx(
-                  'relative whitespace-nowrap text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 hover:text-electric xl:text-[12px] xl:tracking-[0.18em]',
+                  'relative whitespace-nowrap text-[11px] uppercase tracking-[0.14em] transition-colors duration-300 hover:text-electric 2xl:text-[12px] 2xl:tracking-[0.18em]',
                   scrolled ? 'text-ink' : 'text-ink/85',
                   active && 'text-electric'
                 )}
@@ -95,7 +95,7 @@ export default function SiteHeader() {
           <Link
             href={headerCTA.href}
             data-cursor="hover"
-            className="hidden items-center gap-2 bg-electric px-5 py-3 text-[12px] uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-royal lg:inline-flex"
+            className="hidden items-center gap-2 bg-electric px-5 py-3 text-[12px] uppercase tracking-[0.18em] text-white transition-colors duration-300 hover:bg-royal xl:inline-flex"
           >
             {headerCTA.label}
             <ArrowUpRight size={14} />
@@ -104,7 +104,7 @@ export default function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             data-cursor="hover"
-            className="grid h-11 w-11 place-items-center border border-ink/15 lg:hidden"
+            className="grid h-11 w-11 place-items-center border border-ink/15 xl:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -119,7 +119,7 @@ export default function SiteHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden"
+            className="xl:hidden"
           >
             <div className="bg-ink text-ivory">
               <nav className="mx-auto flex max-w-[1480px] flex-col px-6 py-10">
