@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
 import { footerLinks } from '@/lib/nav';
@@ -10,9 +11,15 @@ export default function SiteFooter() {
         {/* Block 1 — Brand + Nav */}
         <div className="grid gap-12 lg:grid-cols-[30%_70%] lg:gap-16">
           <div>
-            <div className="font-display text-3xl font-medium tracking-[0.04em]">
-              Dholakia<span className="italic text-electric">.</span>
-            </div>
+            <Link href="/" aria-label="Dholakia Retail—home" className="relative block h-12 w-[210px]">
+              <Image
+                src="/brand/logo-dark.svg"
+                alt="Dholakia Retail"
+                fill
+                sizes="210px"
+                className="object-contain object-left"
+              />
+            </Link>
             <p className="mt-6 max-w-[320px] text-[15px] leading-[1.55] text-[#B4BCC9]">
               A house of houses — the parent company of a curated portfolio of luxury jewellery
               brands, beginning with Mayavé.

@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
@@ -33,14 +34,36 @@ export default function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-[72px] max-w-[1480px] items-center justify-between px-6 md:h-[88px] md:px-10">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3" data-cursor="hover">
-          <span className="font-display text-[22px] font-medium tracking-[0.04em] md:text-[24px]">
-            Dholakia<span className="italic text-electric">.</span>
-          </span>
-          <span className="hidden text-[10px] uppercase tracking-[0.22em] text-muted md:inline">
-            Retail
-          </span>
+        {/* Logo — swap variants based on scroll state */}
+        <Link
+          href="/"
+          className="relative flex h-10 w-[150px] items-center md:w-[170px]"
+          aria-label="Dholakia Retail—home"
+          data-cursor="hover"
+        >
+          <Image
+            src="/brand/logo-light.svg"
+            alt="Dholakia Retail"
+            fill
+            priority
+            sizes="170px"
+            className={clsx(
+              'object-contain object-left transition-opacity duration-500',
+              scrolled ? 'opacity-100' : 'opacity-0'
+            )}
+          />
+          <Image
+            src="/brand/logo-dark.svg"
+            alt=""
+            aria-hidden
+            fill
+            priority
+            sizes="170px"
+            className={clsx(
+              'object-contain object-left transition-opacity duration-500',
+              scrolled ? 'opacity-0' : 'opacity-100'
+            )}
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -100,6 +123,15 @@ export default function SiteHeader() {
           >
             <div className="bg-ink text-ivory">
               <nav className="mx-auto flex max-w-[1480px] flex-col px-6 py-10">
+                <div className="mb-6 h-9 w-[160px] relative">
+                  <Image
+                    src="/brand/logo-dark.svg"
+                    alt="Dholakia Retail"
+                    fill
+                    sizes="160px"
+                    className="object-contain object-left"
+                  />
+                </div>
                 {primaryNav.map((item, i) => (
                   <motion.div
                     key={item.href}
