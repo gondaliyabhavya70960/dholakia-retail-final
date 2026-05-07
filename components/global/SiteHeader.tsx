@@ -37,7 +37,7 @@ export default function SiteHeader() {
         {/* Logo — swap variants based on scroll state */}
         <Link
           href="/"
-          className="relative flex h-10 w-[150px] items-center md:w-[170px]"
+          className="relative flex h-9 w-[130px] shrink-0 items-center md:h-10 md:w-[150px] xl:w-[170px]"
           aria-label="Dholakia Retail—home"
           data-cursor="hover"
         >
@@ -67,7 +67,7 @@ export default function SiteHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-8">
           {primaryNav.map((item) => {
             const active = path === item.href || (item.href !== '/' && path?.startsWith(item.href));
             return (
@@ -76,7 +76,7 @@ export default function SiteHeader() {
                 href={item.href}
                 data-cursor="hover"
                 className={clsx(
-                  'relative text-[12px] uppercase tracking-[0.18em] transition-colors duration-300 hover:text-electric',
+                  'relative whitespace-nowrap text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 hover:text-electric xl:text-[12px] xl:tracking-[0.18em]',
                   scrolled ? 'text-ink' : 'text-ink/85',
                   active && 'text-electric'
                 )}
