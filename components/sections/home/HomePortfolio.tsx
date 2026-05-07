@@ -1,10 +1,8 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import Reveal from '@/components/motion/Reveal';
 import MouseParallax from '@/components/motion/MouseParallax';
-import TiltImage from '@/components/motion/TiltImage';
 
 export default function HomePortfolio() {
   return (
@@ -18,14 +16,20 @@ export default function HomePortfolio() {
 
         <Reveal delay={0.1}>
           <MouseParallax strength={20}>
-            <div className="relative mx-auto w-[min(640px,86vw)]">
-              <TiltImage
-                src="/images/mayave-piece.jpg"
-                alt="Mayavé signature piece"
-                containerClassName="aspect-[4/5] w-full shadow-[0_30px_80px_-30px_rgba(11,20,38,0.25)]"
-                maxAngle={3}
-                scale={1.04}
-              />
+            <div className="relative mx-auto w-[min(720px,90vw)]">
+              <div className="relative aspect-video w-full overflow-hidden bg-ink shadow-[0_30px_80px_-30px_rgba(11,20,38,0.35)]">
+                <video
+                  src="/videos/optB-home-portfolio-preview.mp4"
+                  poster="/images/optB-home-portfolio-preview-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  aria-label="Mayavé solitaire — a slow rotation in studio light"
+                />
+              </div>
             </div>
           </MouseParallax>
         </Reveal>

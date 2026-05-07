@@ -3,6 +3,7 @@ import HomeIntro from '@/components/sections/home/HomeIntro';
 import HomePrinciples from '@/components/sections/home/HomePrinciples';
 import HomeSnapshot from '@/components/sections/home/HomeSnapshot';
 import HomePortfolio from '@/components/sections/home/HomePortfolio';
+import HomeBrandFilm from '@/components/sections/home/HomeBrandFilm';
 import HomeSustain from '@/components/sections/home/HomeSustain';
 import HomeNews from '@/components/sections/home/HomeNews';
 import HomeCTA from '@/components/sections/home/HomeCTA';
@@ -15,6 +16,7 @@ export default function HomePage() {
       <HomePrinciples />
       <HomeSnapshot />
       <HomePortfolio />
+      <HomeBrandFilm />
       <HomeSustain />
       <HomeNews />
       <HomeCTA />

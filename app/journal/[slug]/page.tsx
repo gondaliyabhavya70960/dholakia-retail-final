@@ -173,6 +173,29 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Editorial archive composite — Mayavé storytelling spread */}
+      <section className="bg-ink">
+        <div className="mx-auto max-w-[1480px] px-6 py-24 md:px-12 md:py-32">
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-[0.22em] text-electric">From the editorial archive</div>
+            <h2 className="font-display mt-5 max-w-[820px] text-[clamp(1.8rem,3vw,2.8rem)] font-light italic leading-[1.14] tracking-[-0.012em] text-ivory">
+              Six stories that shape the house.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <div className="relative mt-12 aspect-video w-full overflow-hidden">
+              <Image
+                src="/images/optB-related-posts.jpg"
+                alt="Editorial archive grid — brand story, diamond education, craftsmanship, jewellery guide, style edit, and store experience"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Related */}
       <section className="bg-ivory">
         <div className="mx-auto max-w-[1280px] px-6 py-24 md:px-12 md:py-32">

@@ -1,5 +1,6 @@
 import PageHero from '@/components/sections/PageHero';
 import EditorialBlock from '@/components/sections/EditorialBlock';
+import MediaFeature from '@/components/sections/MediaFeature';
 import PageCloser from '@/components/sections/PageCloser';
 import InnovationLGD from '@/components/sections/innovation/InnovationLGD';
 import InnovationCompare from '@/components/sections/innovation/InnovationCompare';
@@ -16,6 +17,13 @@ export default function InnovationPage() {
         imageSrc="/images/innovation-1.jpg"
       />
       <InnovationLGD />
+      <MediaFeature
+        imageSrc="/images/optB-innovation-process.jpg"
+        alt="A jeweller observing precision laser cutting in the Surat innovation lab"
+        eyebrow="The process — inside the lab"
+        caption="A jeweller observes the laser cutter inscribing a Mayavé mount, accurate to the micron."
+        meta="Surat · Innovation Lab"
+      />
       <EditorialBlock
         eyebrow="The Surat CVD chamber"
         heading="A diamond grown in a controlled chamber, in fourteen weeks, with measurable carbon."
@@ -25,6 +33,14 @@ export default function InnovationPage() {
         ]}
       />
       <InnovationCompare />
+      <MediaFeature
+        imageSrc="/images/optB-innovation-quality.jpg"
+        alt="Provenance ledger displayed beside an emerald-cut Mayavé pendant"
+        eyebrow="Quality & relevance"
+        caption="Every diamond ships with a watt-hour ledger — traceable, ethical, exceptional."
+        meta="Provenance · Mayavé by Dholakia Retail"
+        bg="offwhite"
+      />
       <PageCloser
         statement="The most beautiful piece in the room. *Engineered to be the most ethical.*"
         body="If you are working on materials science, lab-grown standards, or post-mining provenance — we welcome the conversation. Our innovation desk replies the same week."

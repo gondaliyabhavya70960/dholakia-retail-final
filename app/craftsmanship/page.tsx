@@ -4,6 +4,7 @@ import PageCloser from '@/components/sections/PageCloser';
 import CraftPhilosophy from '@/components/sections/craft/CraftPhilosophy';
 import CraftProcess from '@/components/sections/craft/CraftProcess';
 import CraftEcosystem from '@/components/sections/craft/CraftEcosystem';
+import EmbeddedVideo from '@/components/sections/EmbeddedVideo';
 
 export const metadata = { title: 'Craftsmanship · Dholakia Retail' };
 
@@ -18,6 +19,15 @@ export default function CraftPage() {
       />
       <CraftPhilosophy />
       <CraftEcosystem />
+      <EmbeddedVideo
+        src="https://www.youtube-nocookie.com/embed/0dkGGeiMs1I?rel=0&modestbranding=1"
+        title="The making ecosystem — Surat"
+        eyebrow="Inside the making ecosystem"
+        caption="A documentary look at the Surat partner network — bench, bourse, and the patient hands behind every Mayavé piece."
+        sourceLabel="Watch on YouTube"
+        sourceHref="https://www.youtube.com/watch?v=0dkGGeiMs1I"
+        bg="offwhite"
+      />
       <CraftProcess />
       <EditorialBlock
         eyebrow="A note from the bench"

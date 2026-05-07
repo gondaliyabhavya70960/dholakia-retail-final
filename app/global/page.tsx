@@ -12,7 +12,7 @@ export default function GlobalPage() {
         eyebrow="Global presence"
         title={'Surat. Mumbai. World.'}
         subtitle="A focused footprint — three locations, three roles. We do not open salons. We open conversations."
-        imageSrc="/images/global-map.jpg"
+        imageSrc="/images/optB-global-hero.jpg"
         variant="fullbleed"
       />
       <GlobalFootprint />

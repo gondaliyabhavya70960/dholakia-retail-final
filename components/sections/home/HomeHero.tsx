@@ -9,29 +9,34 @@ import Eyebrow from '../Eyebrow';
 export default function HomeHero() {
   return (
     <section className="relative grid h-[100vh] grid-cols-1 overflow-hidden bg-ivory lg:grid-cols-[60%_40%]">
-      {/* Left — cinematic image with multi-layer mouse parallax */}
+      {/* Left — cinematic background video with poster fallback + parallax overlays */}
       <div className="relative h-[55vh] overflow-hidden bg-ink lg:h-auto">
+        {/* Poster fallback (renders before video, useful if browser blocks autoplay) */}
+        <Image
+          src="/images/optB-home-hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="60vw"
+          className="object-cover"
+        />
+        {/* Looping ambient hero video — silent, autoplay */}
+        <video
+          src="/videos/optB-home-hero.mp4"
+          poster="/images/optB-home-hero.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
+        />
+        {/* Mouse-parallax overlay layers */}
         <ParallaxScene
-          className="absolute inset-0"
+          className="pointer-events-none absolute inset-0"
           amplitude={42}
           layers={[
-            // Background layer — deepest
-            {
-              depth: 1,
-              children: (
-                <div className="absolute -inset-[8%]">
-                  <Image
-                    src="/images/hero-diamond.jpg"
-                    alt="Hero"
-                    fill
-                    priority
-                    sizes="60vw"
-                    className="object-cover scale-110"
-                  />
-                </div>
-              )
-            },
-            // Mid — gradient overlay, counter-direction
             {
               depth: 0.45,
               invert: true,
@@ -39,13 +44,10 @@ export default function HomeHero() {
                 <div className="absolute inset-0 bg-gradient-to-br from-ink/30 via-ink/10 to-ink/60" />
               )
             },
-            // Foreground — fine grain, opposite drift
             {
               depth: 0.18,
               invert: true,
-              children: (
-                <div className="absolute inset-0 grain pointer-events-none" />
-              )
+              children: <div className="absolute inset-0 grain pointer-events-none" />
             }
           ]}
         />
